@@ -13,12 +13,12 @@ export default function Home() {
           <Link className="text-[#2ac3de] underline hover:font-semibold" href={`/`}>home</Link>
           <Link className="text-[#2ac3de] underline hover:font-semibold" href={`/blog`}>blog</Link>
           <Link className="text-[#2ac3de] underline hover:font-semibold" href={`/projects`}>projects</Link>
-          </nav>
+        </nav>
 
           
 
 
-        <div className="flex flex-col sm:flex-row justify-start mt-15 gap-x-10 items-center space-y-7">
+        <div className="flex flex-col items-start justify-center sm:flex-row sm:justify-start mt-15 gap-x-10 sm:items-center space-y-7 px-4">
         <Image className="mx-auto" src="/pfp.png" alt="Photo" width={300} height={300} />
         
 
@@ -34,9 +34,9 @@ export default function Home() {
       
 
         </div>
-        <div className="sm:flex justify-start mt-8 ">
+        <div className="sm:flex justify-start mt-8 px-4 gap-x-15">
 
-        <div className="px-4 flex flex-col  justify-start items-start  space-y-2 max-w-xs ">
+        <div className=" flex flex-col  justify-start items-start  space-y-2 max-w-xs ">
         <h1 className="text-xl text-color-primary text-[#b4f9f8] ">work</h1>
         <a href="https://oss.rutgers.edu/" target="_blank" className="text-xl underline text-[#2ac3de]  hover:font-semibold text text-color-primary mt-4 ">OSS</a>
         <p className="font-light text-[#7dcfff] ">swe</p>
@@ -45,7 +45,7 @@ export default function Home() {
         
         </div>
 
-        <div className="px-4 flex flex-col justify-start items-start max-w-xs  space-y-2 mt-15 sm:mt-0">
+        <div className="flex flex-col justify-start items-start max-w-xs  space-y-2 mt-15 sm:mt-0">
           <div className="flex flex-col space-y-2">
 
           <h1 className="text-xl text-color-primary text-[#b4f9f8]">projects</h1>

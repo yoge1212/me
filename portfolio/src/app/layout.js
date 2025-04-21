@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react"
 import './globals.css';
 import Link from 'next/link';
 const geistSans = Geist({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
             </nav>
 
             {children}
+            <Analytics />
 
             <footer className="flex gap-x-5 px-2 py-1 justify-start mt-30 mb-5 bg-[#414868]">
               <a

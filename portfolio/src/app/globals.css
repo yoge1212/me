@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -43,21 +43,17 @@
   --color-error: var(--color-error);
   --color-warning: var(--color-warning);
   --color-info: var(--color-info);
-  
-  
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #1a1b26;
     --foreground: #ededed;
-    
-    
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-jetbrains-mono)
+  font-family: var(--font-jetbrains-mono);
 }

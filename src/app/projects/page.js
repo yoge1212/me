@@ -1,5 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
+export const metadata = {
+  title: 'Projects',
+  description: 'A list of projects I’ve built.',
+};
 
 export default function Blog() {
   return (

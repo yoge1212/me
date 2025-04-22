@@ -18,7 +18,11 @@ const jetBrains = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'Yogesh Sampathkumar',
+  title: {
+    default: 'Yogesh Sampathkumar',
+    template: '%s | Yogesh Sampathkumar',
+  },
+  descripton: 'Personal portfolio of Yogesh Sampathkumar'
 };
 
 export default function RootLayout({ children }) {

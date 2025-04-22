@@ -19,7 +19,7 @@ const jetBrains = JetBrains_Mono({
 
 export const metadata = {
   title: {
-    default: 'Yogesh Sampathkumar',
+    default: 'Yogesh Sampathkumar Portfolio',
     template: '%s | Yogesh Sampathkumar',
   },
   descripton: 'Personal portfolio of Yogesh Sampathkumar'

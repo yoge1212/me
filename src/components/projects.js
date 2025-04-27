@@ -11,8 +11,9 @@ export default function ProjectsGallery() {
           Clipped
         </a>
         <p className="font-light text-[#cfc9c2] ">
-          {' '}
-          real-time video surveillance, which classifies individuals as suspicious or normal.{' '}
+          {" "}
+          real-time video surveillance, which classifies individuals as
+          suspicious or normal.{" "}
         </p>
       </div>
 
@@ -25,7 +26,7 @@ export default function ProjectsGallery() {
           ScarletExchange
         </a>
         <p className="font-light text-[#cfc9c2] ">
-          {' '}
+          {" "}
           a platform for rutgers students to buy and sell items.
         </p>
       </div>

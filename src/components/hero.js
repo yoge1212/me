@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function ProfileCard() {
   return (
@@ -7,9 +7,15 @@ export default function ProfileCard() {
 
       <div>
         <h1 className="text-3xl text-[#f7768e]">yogesh</h1>
-        <p className="text-sm text-[#ff9e64] font-extralight mt-6">new jersey</p>
-        <p className="text-sm text-[#ff9e64] font-extralight mt-2">open to swe roles</p>
-        <p className="text-sm text-[#cfc9c2] font-extralight mt-6">cs @ rutgers. i love building</p>
+        <p className="text-sm text-[#ff9e64] font-extralight mt-6">
+          new jersey
+        </p>
+        <p className="text-sm text-[#ff9e64] font-extralight mt-2">
+          open to swe roles
+        </p>
+        <p className="text-sm text-[#cfc9c2] font-extralight mt-6">
+          cs @ rutgers. i love building
+        </p>
       </div>
     </div>
   );

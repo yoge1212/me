@@ -1,7 +1,7 @@
-import ProfileCard from '../components/hero';
-import WorkHistory from '@/components/work';
-import ProjectsGallery from '@/components/projects';
-import RecentPosts from '@/components/recent';
+import ProfileCard from "../components/hero";
+import WorkHistory from "@/components/work";
+import ProjectsGallery from "@/components/projects";
+import RecentPosts from "@/components/recent";
 
 export default function Home() {
   return (

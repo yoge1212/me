@@ -10,8 +10,12 @@ export default function WorkHistory() {
         OSS
       </a>
       <p className="font-light text-[#7dcfff] ">swe</p>
-      <p className="font-extralight text-xs text-[#7aa2f7] ">jan &apos;25 - present</p>
-      <p className="font-light text-[#cfc9c2] ">building services for the rutgers community.</p>
+      <p className="font-extralight text-xs text-[#7aa2f7] ">
+        jan &apos;25 - present
+      </p>
+      <p className="font-light text-[#cfc9c2] ">
+        building services for the rutgers community.
+      </p>
     </div>
   );
 }

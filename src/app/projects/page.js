@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Projects',
-  description: 'A list of projects I’ve built.',
+  title: "Projects",
+  description: "A list of projects I’ve built.",
 };
 
 export default function Blog() {

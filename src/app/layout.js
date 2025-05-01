@@ -19,6 +19,9 @@ const jetBrains = JetBrains_Mono({
 });
 
 export const metadata = {
+  icons: {
+    icon: '/favicon.png',
+  },
   title: {
     default: "Yogesh Sampathkumar Portfolio",
     template: "%s | Yogesh Sampathkumar",

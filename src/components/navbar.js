@@ -66,50 +66,44 @@ export default function Navbar() {
             />
             <div className="mt-4">
               {(!value ? navItems : filteredItems).map((item, index) => {
+                const Icon = item.icon;
+                return item.kind == "page" ? (
+                  <Link
+                    key={index}
+                    href={item.name == "home" ? "/" : `/${item.name}`}
+                    onClick={btnClick}
+                  >
+                    <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
+                      <Icon
+                        className="font-light text-[#cfc9c2]"
+                        size={14}
+                        strokeWidth={2}
+                      />
 
-              
-                    const Icon = item.icon;
-                    return (
-
-                    
-                    item.kind == "page" ? (
-                      <Link
-                        key={index}
-                        href={item.name == "home" ? "/" : `/${item.name}`}
-                        onClick={btnClick}
-                      >
-                        <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                          <Icon className="font-light text-[#cfc9c2]"
-                            size={14}
-                            strokeWidth={2}/>
-                         
-                          <p className="font-light text-[#cfc9c2]">
-                            {item.name}
-                          </p>
-                        </div>
-                      </Link>
-                    ) : (
-                      <a
-                        key={index}
-                        target="_blank"
-                        href={
-                          item.name == "linkedin"
-                            ? "https://www.linkedin.com/in/yogeshsampathkumar/"
-                            : "https://github.com/yoge1212"
-                        }
-                      >
-                        <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                          <Icon className="font-light text-[#cfc9c2]"
-                            size={14}
-                            strokeWidth={2}/>
-                          <p className="font-light text-[#cfc9c2]">
-                            {item.name}
-                          </p>
-                        </div>
-                      </a>
-                    )
-              )})}
-                
+                      <p className="font-light text-[#cfc9c2]">{item.name}</p>
+                    </div>
+                  </Link>
+                ) : (
+                  <a
+                    key={index}
+                    target="_blank"
+                    href={
+                      item.name == "linkedin"
+                        ? "https://www.linkedin.com/in/yogeshsampathkumar/"
+                        : "https://github.com/yoge1212"
+                    }
+                  >
+                    <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
+                      <Icon
+                        className="font-light text-[#cfc9c2]"
+                        size={14}
+                        strokeWidth={2}
+                      />
+                      <p className="font-light text-[#cfc9c2]">{item.name}</p>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

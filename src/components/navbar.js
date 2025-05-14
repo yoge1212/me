@@ -41,7 +41,7 @@ export default function Navbar() {
   const handleChange = (e) => {
     setValue(e.target.value);
     setFilteredItems(
-      navItems.filter((item) => item.name.includes(e.target.value)),
+      navItems.filter((item) => item.name.includes(e.target.value.toLowerCase())),
     );
   };
 

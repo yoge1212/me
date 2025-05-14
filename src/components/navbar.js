@@ -14,7 +14,13 @@ export default function Navbar() {
   const [showBox, setShowBox] = useState(false);
   const [value, setValue] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
-  const navItems = [{name: "home", kind: "page" }, {name: "blog", kind: "page" }, {name: "projects", kind: "page" }, {name: "github", kind: "link" }, {name: "linkedin", kind: "link" }]; 
+  const navItems = [
+    { name: "home", kind: "page", icon: Home },
+    { name: "blog", kind: "page", icon: NotebookPen },
+    { name: "projects", kind: "page", icon: FolderKanban },
+    { name: "github", kind: "link", icon: Github },
+    { name: "linkedin", kind: "link", icon: Linkedin },
+  ];
 
   const btnClick = () => {
     setShowBox(!showBox);
@@ -33,10 +39,10 @@ export default function Navbar() {
   }, [btnClick]);
 
   const handleChange = (e) => {
-    setValue(e.target.value)
-    console.log(value);
-    setFilteredItems(navItems.filter((item) => item.name.includes(e.target.value)));
-
+    setValue(e.target.value);
+    setFilteredItems(
+      navItems.filter((item) => item.name.includes(e.target.value)),
+    );
   };
 
   return (
@@ -58,74 +64,53 @@ export default function Navbar() {
               value={value}
               onChange={handleChange}
             />
-<div className="mt-4">
-            {!value ? 
+            <div className="mt-4">
+              {(!value ? navItems : filteredItems).map((item, index) => {
 
-                  navItems.map((item, index) => (
+              
+                    const Icon = item.icon;
+                    return (
 
-                    (item.kind == "page" ? 
-                      <Link key={index} href={item.name == "home" ? '/' : `/${item.name}` } onClick={btnClick}>
-                <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                  <Home
-                    className="font-light text-[#cfc9c2]"
-                    size={14}
-                    strokeWidth={2}
-                  />
-                  <p className="font-light text-[#cfc9c2]">{item.name}</p>
-                </div>
-              </Link>
-
-
-                      :
-
-                       <a
-                       key={index}
-              target="_blank"
-              href={item.name == "linkedin" ? 'https://www.linkedin.com/in/yogeshsampathkumar/' : 'https://github.com/yoge1212' }
-            >
-              <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                <Linkedin
-                  className="font-light text-[#cfc9c2]"
-                  size={14}
-                  strokeWidth={1.5}
-                />
-                <p className="font-light text-[#cfc9c2]">{item.name}</p>
-              </div>
-            </a>
-
+                    
+                    item.kind == "page" ? (
+                      <Link
+                        key={index}
+                        href={item.name == "home" ? "/" : `/${item.name}`}
+                        onClick={btnClick}
+                      >
+                        <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
+                          <Icon className="font-light text-[#cfc9c2]"
+                            size={14}
+                            strokeWidth={2}/>
+                         
+                          <p className="font-light text-[#cfc9c2]">
+                            {item.name}
+                          </p>
+                        </div>
+                      </Link>
+                    ) : (
+                      <a
+                        key={index}
+                        target="_blank"
+                        href={
+                          item.name == "linkedin"
+                            ? "https://www.linkedin.com/in/yogeshsampathkumar/"
+                            : "https://github.com/yoge1212"
+                        }
+                      >
+                        <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
+                          <Icon className="font-light text-[#cfc9c2]"
+                            size={14}
+                            strokeWidth={2}/>
+                          <p className="font-light text-[#cfc9c2]">
+                            {item.name}
+                          </p>
+                        </div>
+                      </a>
                     )
-
-                  
-
-            
-
-              ))
-
-              
-
-                : filteredItems.map((item, index) => (
-
-                  <Link key={index} href={item.name == "home" ? '/' : `/${item.name}` } onClick={btnClick}>
-                <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                  <Home
-                    className="font-light text-[#cfc9c2]"
-                    size={14}
-                    strokeWidth={2}
-                  />
-                  <p className="font-light text-[#cfc9c2]">{item.name}</p>
-                </div>
-              </Link>
-
-            
-
-              ))
-
-            
-            
-              
-            }
+              )})}
+                
             </div>
-            
           </div>
         </div>
       ) : (

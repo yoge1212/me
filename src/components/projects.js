@@ -12,8 +12,8 @@ export default function ProjectsGallery() {
         </a>
         <p className="font-light text-[#cfc9c2] ">
           {" "}
-          real-time video surveillance, which classifies individuals as
-          suspicious or normal.{" "}
+          real-time video surveillance system that identifies suspicious
+          individuals.
         </p>
       </div>
 

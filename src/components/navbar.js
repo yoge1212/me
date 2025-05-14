@@ -12,6 +12,9 @@ import {
 
 export default function Navbar() {
   const [showBox, setShowBox] = useState(false);
+  const [value, setValue] = useState("");
+  const [filteredItems, setFilteredItems] = useState([]);
+  const navItems = [{name: "home", kind: "page" }, {name: "blog", kind: "page" }, {name: "projects", kind: "page" }, {name: "github", kind: "link" }, {name: "linkedin", kind: "link" }]; 
 
   const btnClick = () => {
     setShowBox(!showBox);
@@ -27,6 +30,13 @@ export default function Navbar() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [btnClick]);
+
+  const handleChange = (e) => {
+    setValue(e.target.value)
+    console.log(value);
+    setFilteredItems(navItems.filter((item) => item.name.includes(e.target.value)));
+
+  };
 
   return (
     <>
@@ -44,54 +54,33 @@ export default function Navbar() {
               type="text"
               className="mx-4 mt-4 px-3 py-2 placeholder:text-[#7e7a75] border-2 border-transparent outline-none focus:border-2 focus:border-[#b4f9f8] rounded text-[#cfc9c2] font-light placeholder:font-light"
               placeholder="enter something..."
+              value={value}
+              onChange={handleChange}
             />
-            <Link className="mt-4" href={"/"} onClick={btnClick}>
-              <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                <Home
-                  className="font-light text-[#cfc9c2]"
-                  size={14}
-                  strokeWidth={2}
-                />
-                <p className="font-light text-[#cfc9c2]">home</p>
-              </div>
-            </Link>
+<div className="mt-4">
+            {!value ? 
 
-            <Link href={"/blog"} onClick={btnClick}>
-              <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                <NotebookPen
-                  className="font-light text-[#cfc9c2]"
-                  size={14}
-                  strokeWidth={2}
-                />
-                <p className="font-light text-[#cfc9c2]">blog</p>
-              </div>
-            </Link>
+                  navItems.map((item, index) => (
 
-            <Link href={"/projects"} onClick={btnClick}>
-              <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                <FolderKanban
-                  className="font-light text-[#cfc9c2]"
-                  size={14}
-                  strokeWidth={2}
-                />
-                <p className="font-light text-[#cfc9c2]">projects</p>
-              </div>
-            </Link>
+                    (item.kind == "page" ? 
+                      <Link key={index} href={item.name == "home" ? '/' : `/${item.name}` } onClick={btnClick}>
+                <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
+                  <Home
+                    className="font-light text-[#cfc9c2]"
+                    size={14}
+                    strokeWidth={2}
+                  />
+                  <p className="font-light text-[#cfc9c2]">{item.name}</p>
+                </div>
+              </Link>
 
-            <a target="_blank" href="https://github.com/yoge1212">
-              <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
-                <Github
-                  className="font-light text-[#cfc9c2]"
-                  size={14}
-                  strokeWidth={2}
-                />
-                <p className="font-light text-[#cfc9c2]">github</p>
-              </div>
-            </a>
 
-            <a
+                      :
+
+                       <a
+                       key={index}
               target="_blank"
-              href="https://www.linkedin.com/in/yogeshsampathkumar/"
+              href={item.name == "linkedin" ? 'https://www.linkedin.com/in/yogeshsampathkumar/' : 'https://github.com/yoge1212' }
             >
               <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
                 <Linkedin
@@ -99,9 +88,43 @@ export default function Navbar() {
                   size={14}
                   strokeWidth={1.5}
                 />
-                <p className="font-light text-[#cfc9c2]">linkedin</p>
+                <p className="font-light text-[#cfc9c2]">{item.name}</p>
               </div>
             </a>
+
+                    )
+
+                  
+
+            
+
+              ))
+
+              
+
+                : filteredItems.map((item, index) => (
+
+                  <Link key={index} href={item.name == "home" ? '/' : `/${item.name}` } onClick={btnClick}>
+                <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
+                  <Home
+                    className="font-light text-[#cfc9c2]"
+                    size={14}
+                    strokeWidth={2}
+                  />
+                  <p className="font-light text-[#cfc9c2]">{item.name}</p>
+                </div>
+              </Link>
+
+            
+
+              ))
+
+            
+            
+              
+            }
+            </div>
+            
           </div>
         </div>
       ) : (

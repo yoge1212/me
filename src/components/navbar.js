@@ -18,6 +18,7 @@ export default function Navbar() {
 
   const btnClick = () => {
     setShowBox(!showBox);
+    setValue("");
   };
 
   useEffect(() => {

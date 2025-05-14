@@ -18,8 +18,18 @@ export default function Navbar() {
     { name: "home", kind: "page", icon: Home },
     { name: "blog", kind: "page", icon: NotebookPen },
     { name: "projects", kind: "page", icon: FolderKanban },
-    { name: "github", kind: "link", icon: Github },
-    { name: "linkedin", kind: "link", icon: Linkedin },
+    {
+      name: "github",
+      kind: "link",
+      icon: Github,
+      url: "https://github.com/yoge1212",
+    },
+    {
+      name: "linkedin",
+      kind: "link",
+      icon: Linkedin,
+      url: "https://www.linkedin.com/in/yogeshsampathkumar/",
+    },
   ];
 
   const btnClick = () => {
@@ -41,7 +51,9 @@ export default function Navbar() {
   const handleChange = (e) => {
     setValue(e.target.value);
     setFilteredItems(
-      navItems.filter((item) => item.name.includes(e.target.value.toLowerCase())),
+      navItems.filter((item) =>
+        item.name.includes(e.target.value.toLowerCase()),
+      ),
     );
   };
 
@@ -84,15 +96,7 @@ export default function Navbar() {
                     </div>
                   </Link>
                 ) : (
-                  <a
-                    key={index}
-                    target="_blank"
-                    href={
-                      item.name == "linkedin"
-                        ? "https://www.linkedin.com/in/yogeshsampathkumar/"
-                        : "https://github.com/yoge1212"
-                    }
-                  >
+                  <a key={index} target="_blank" href={item.url}>
                     <div className=" flex p-4 gap-x-4 items-center justify-left hover:bg-[#24283b]">
                       <Icon
                         className="font-light text-[#cfc9c2]"
